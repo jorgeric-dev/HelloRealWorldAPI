@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["HelloRealWorldAPI/HelloRealWorldAPI.csproj", "HelloRealWorldAPI/"]
+COPY *.csproj ./
 RUN dotnet restore "./HelloRealWorldAPI/HelloRealWorldAPI.csproj"
 COPY . .
 WORKDIR "/src/HelloRealWorldAPI"
